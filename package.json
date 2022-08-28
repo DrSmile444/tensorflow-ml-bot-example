@@ -1,7 +1,7 @@
 {
   "name": "tensorflow-ml-bot-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "This repo contains an example of using tensorflow model together with Telegram Bots to analyze messages from users.",
   "main": "src/bot.js",
   "scripts": {
     "start": "nodemon ./src/bot.ts",
@@ -27,12 +27,15 @@
     "ts-node": "^10.9.1",
     "typescript": "^4.8.2"
   },
+  "engines" : {
+    "node" : ">=16.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DrSmile444/tensorflow-ml-bot-example.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["telegram", "tutorial", "telegram-bot", "tensorflow", "example"],
+  "author": "Dmytro Vakulenko",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DrSmile444/tensorflow-ml-bot-example/issues"
