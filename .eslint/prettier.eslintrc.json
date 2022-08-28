@@ -1,0 +1,14 @@
+{
+  "extends": {
+    "packages": ["eslint-config-prettier", "eslint-plugin-prettier", "prettier"]
+  },
+  "extends": [
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}
