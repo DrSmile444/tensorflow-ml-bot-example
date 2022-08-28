@@ -15,6 +15,7 @@
     "./.eslint/node.eslintrc.json",
     "./.eslint/smile-style.eslintrc.json",
     "./.eslint/unicorn.eslintrc.json",
+    "./.eslint/ordered-imports.eslintrc.json5",
     "./.eslint/prettier.eslintrc.json"
   ],
   "rules": {
