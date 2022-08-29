@@ -53,3 +53,17 @@ This project contains several branches with different stages of the bot:
 3. [Grammy](https://grammy.dev/) - makes creating Telegram bots so simple you already know how to do it.
 4. [ESLint](https://eslint.org/) - statically analyzes your code to quickly find problems. It is built into most text editors and you can run ESLint as part of your continuous integration pipeline.
 5. [Prettier](https://prettier.io/) - is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
+
+## Code editors
+
+Here you can find a suggested code editors list
+
+### WebStorm (recommended)
+[WebStorm](https://www.jetbrains.com/webstorm/) has [built-in ESLint plugin support](https://www.jetbrains.com/help/webstorm/eslint.html), so you need only enable it.
+The course lectors will use this IDE.
+
+### Visual Studio Code
+VS Code includes built-in JavaScript IntelliSense, debugging, formatting, code navigation, refactorings, and many other advanced language features.
+To enable ESLint, you need to install ESLint plugin.
+
+This repo contains VS Code suggested plugins, so you can install them in several clicks.
