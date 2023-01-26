@@ -11,11 +11,11 @@
   ],
   "root": true,
   "extends": [
-    "./.eslint/typescript.eslintrc.json",
     "./.eslint/node.eslintrc.json",
     "./.eslint/smile-style.eslintrc.json",
     "./.eslint/unicorn.eslintrc.json",
     "./.eslint/ordered-imports.eslintrc.json5",
+    "./.eslint/typescript.eslintrc.json",
     "./.eslint/prettier.eslintrc.json"
   ],
   "rules": {

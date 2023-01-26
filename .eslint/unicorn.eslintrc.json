@@ -2,5 +2,8 @@
   "plugins": [
     "unicorn"
   ],
-  "extends": "plugin:unicorn/recommended"
+  "extends": "plugin:unicorn/recommended",
+  "rules": {
+    "import/prefer-default-export": "off"
+  }
 }
