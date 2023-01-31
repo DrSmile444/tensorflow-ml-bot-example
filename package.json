@@ -10,6 +10,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@tensorflow/tfjs": "^4.2.0",
+    "@tensorflow/tfjs-core": "^4.2.0",
+    "@tensorflow/tfjs-node": "^4.2.0",
     "dotenv": "^16.0.1",
     "grammy": "^1.10.1",
     "ukrainian-ml-optimizer": "github:DrSmile444/ukrainian-ml-optimizer"
