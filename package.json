@@ -5,6 +5,7 @@
   "main": "src/bot.js",
   "scripts": {
     "start": "nodemon ./src/bot.ts",
+    "transform-vocab": "ts-node ./dataset/tensor-vocab-to-json.ts",
     "lint:js": "TIMING=1 eslint ./src --cache --ext ts,js --quiet",
     "lint:js:fix": "npm run lint:js -- --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
