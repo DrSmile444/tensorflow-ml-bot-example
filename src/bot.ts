@@ -11,10 +11,12 @@ dotenv.config();
 // async iife
 (async () => {
   const { swindlersTensorService } = await initSwindlersTensorService();
-  const { trainingChatComposer } = initTrainingChatComposer(swindlersTensorService);
+  const { trainingChatComposer, trainingChatMenu } = initTrainingChatComposer(swindlersTensorService);
 
   // Create an instance of the `Bot` class and pass your authentication token to it.
   const bot = new Bot(process.env.BOT_TOKEN!); // <-- put your authentication token between the ""
+
+  bot.use(trainingChatMenu);
 
   bot.use((context, next) => {
     console.info(context.update);
