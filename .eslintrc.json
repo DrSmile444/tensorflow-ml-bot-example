@@ -23,6 +23,7 @@
     "import/extensions": "off",
     "import/no-unresolved": "off",
     "unicorn/prefer-module": "off",
+    "unicorn/consistent-function-scoping": "off",
     "camelcase": "off"
   }
 }
