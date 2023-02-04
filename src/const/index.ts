@@ -1,0 +1,1 @@
+export const TRAINING_CHAT_ID = -1_001_801_488_475;
