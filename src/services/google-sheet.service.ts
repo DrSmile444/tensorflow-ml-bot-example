@@ -18,6 +18,36 @@ export class GoogleSheetService {
       })
       .then((result) => (result.data.values || []).map((row) => row[0] as string));
   }
+
+  appendToSheet(spreadsheetId: string, sheetName: string, range: string, value: string) {
+    return this.sheets.spreadsheets.values.append({
+      spreadsheetId,
+      range: `${sheetName}!${range}`,
+      valueInputOption: 'USER_ENTERED',
+      requestBody: {
+        values: [[value]],
+      },
+    });
+  }
+
+  update(spreadsheetId: string, sheetName: string, range: string, value: string[]) {
+    return this.sheets.spreadsheets.values.update({
+      spreadsheetId,
+      range: `${sheetName}!${range}`,
+      valueInputOption: 'USER_ENTERED',
+      requestBody: {
+        values: value.map((item) => [item]),
+      },
+    });
+  }
+
+  async appendToSheetSafe(spreadsheetId: string, sheetName: string, range: string, value: string) {
+    const newValues = await this.getSheet(spreadsheetId, sheetName, range);
+
+    newValues.push(value);
+
+    return this.update(spreadsheetId, sheetName, range, newValues);
+  }
 }
 
 export const googleSheetService = new GoogleSheetService(googleClientService);

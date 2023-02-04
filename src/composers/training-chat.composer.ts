@@ -5,6 +5,7 @@ import { Composer } from 'grammy';
 import { TRAINING_CHAT_ID } from '../const';
 import { getTrainingChatMessage } from '../messages';
 import type { SwindlersTensorService } from '../services';
+import { googleSheetService } from '../services/google-sheet.service';
 
 export const initTrainingChatComposer = (swindlersTensorService: SwindlersTensorService) => {
   const trainingChatComposer = new Composer();
@@ -19,6 +20,9 @@ export const initTrainingChatComposer = (swindlersTensorService: SwindlersTensor
     await context.api.deleteMessage(context.chat.id, message_id);
     await context.deleteMessage();
 
+    const range = isSpam ? 'B6:B' : 'A6:A';
+
+    await googleSheetService.appendToSheetSafe('1JYScSAFKfO0Nk77YJlaYTIYndl9TRZQ0hWETP-nnacg', 'SWINDLERS', range, text || '');
     await context.reply(`${text || ''}\nYou pressed ${isSpam.toString()}`);
   };
 
