@@ -1,12 +1,10 @@
-import * as process from 'node:process';
-import dotenv from 'dotenv';
 import { Bot } from 'grammy';
 import type { UserFromGetMe } from 'grammy/out/types';
 
+import { googleSheetService } from './services/google-sheet.service';
 import { initTrainingChatComposer } from './composers';
+import { environmentConfig } from './config';
 import { initSwindlersTensorService } from './services';
-
-dotenv.config();
 
 // async iife
 (async () => {
@@ -14,7 +12,9 @@ dotenv.config();
   const { trainingChatComposer, trainingChatMenu } = initTrainingChatComposer(swindlersTensorService);
 
   // Create an instance of the `Bot` class and pass your authentication token to it.
-  const bot = new Bot(process.env.BOT_TOKEN!); // <-- put your authentication token between the ""
+  const bot = new Bot(environmentConfig.BOT_TOKEN); // <-- put your authentication token between the ""
+
+  googleSheetService.getSheet('1JYScSAFKfO0Nk77YJlaYTIYndl9TRZQ0hWETP-nnacg', 'SWINDLERS', 'A6:A').then(console.log);
 
   bot.use(trainingChatMenu);
 
